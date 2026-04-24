@@ -37,10 +37,10 @@ export default function Home() {
         </div>
 
         {/* AGENDAMENTO */}
-        <Card className="mt-6">
-          <CardContent className="flex">
+        <Card className="mt-6 rounded-[7px]">
+          <CardContent className="flex justify-between p-0">
             {/* ESQUERDA */}
-            <div className="flex flex-col gap-2 py-5">
+            <div className="flex flex-col gap-2 py-5 pl-5">
               <Badge className="w-fit rounded-[7px] bg-purple-700 p-4 uppercase text-gray-300">
                 Confirmado
               </Badge>
@@ -52,6 +52,13 @@ export default function Home() {
                 </Avatar>
                 <p className="text-sm">Barbearia Clintin dos Sites</p>
               </div>
+            </div>
+
+            {/* DIREITA */}
+            <div className="flex flex-col items-center justify-center border-l-2 border-solid border-purple-800 px-5">
+              <p className="text-xl">Abril</p>
+              <p className="text-6xl">24</p>
+              <p className="text-xl">00:04</p>
             </div>
           </CardContent>
         </Card>
