@@ -3,6 +3,7 @@ import { db } from "@/app/_lib/prisma"
 import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { notFound } from "next/navigation"
 
 interface BarbershopPageProps {
   params: {
@@ -22,7 +23,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
   })
 
   if (!barbershop) {
-    return <h1>Barbearia não encontrada</h1>
+    return notFound()
   }
 
   return (
@@ -55,11 +56,11 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
       </div>
       <div className="border-solid border-b-purple-600 p-5 ">
         <h1 className="mb-3 text-xl font-bold">{barbershop.name}</h1>
-        <div className="mb-2 flex items-center gap-1">
+        <div className="mb-2 flex items-center gap-2">
           <MapPinIcon className="text-primary" size={18} />
           <p className="text-sm">{barbershop?.address}</p>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <StarIcon className="text-primary fill-primary" size={18} />
           <p className="text-sm">5,0 (499 avaliações)</p>
         </div>
