@@ -1,10 +1,12 @@
+"use client"
+
 import { MenuIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import { Card, CardContent } from "./ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { Sheet, SheetTrigger } from "./ui/sheet"
-import SideBarButton from "./SidebarSheet"
+import SideBarSheet from "./SidebartSheet"
 
 const Header = () => {
   return (
@@ -25,12 +27,12 @@ const Header = () => {
             <Button
               size="icon"
               variant="outline"
-              className="absolute right-4 top-4"
+              className="bg-purple-00 absolute right-4 top-4"
             >
               <MenuIcon />
             </Button>
           </SheetTrigger>
-          <SideBarButton />
+          <SideBarSheet />
         </Sheet>
       </CardContent>
     </Card>

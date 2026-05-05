@@ -5,6 +5,7 @@ import { cn } from "@/app/_lib/utils"
 import Header from "./_components/Header"
 import Footer from "./_components/Footer"
 import { Toaster } from "sonner"
+import AuthProvider from "./_providers/auth"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -42,10 +43,12 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col">
-        <Header />
-        {children}
-        <Toaster />
-        <Footer />
+        <AuthProvider>
+          <Header />
+          {children}
+          <Toaster />
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   )
