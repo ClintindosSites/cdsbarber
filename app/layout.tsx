@@ -45,10 +45,13 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <AuthProvider>
           <Header />
-          {children}
-          <Toaster />
-          <Footer />
+          <div className="flex flex-col">
+            {" "}
+            <div className="h-full flex-1"> {children}</div>
+            <Footer />
+          </div>
         </AuthProvider>
+        <Toaster />
       </body>
     </html>
   )
